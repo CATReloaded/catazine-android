@@ -1,4 +1,4 @@
-package models;
+package net.catazine.live.models;
 
 
 import android.os.Parcel;
