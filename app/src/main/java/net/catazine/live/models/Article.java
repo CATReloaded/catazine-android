@@ -5,6 +5,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Article implements Parcelable {
+    public static final Parcelable.Creator<Article> CREATOR = new Parcelable.Creator<Article>() {
+        public Article createFromParcel(Parcel source) {
+            return new Article(source);
+        }
+
+        public Article[] newArray(int size) {
+            return new Article[size];
+        }
+    };
     private int articleId;
     private String title;
     private Author author;
@@ -13,6 +22,20 @@ public class Article implements Parcelable {
     private String date;
     private String guid;
     private String excerpt;
+
+    public Article() {
+    }
+
+    protected Article(Parcel in) {
+        this.articleId = in.readInt();
+        this.title = in.readString();
+        this.author = in.readParcelable(Author.class.getClassLoader());
+        this.content = in.readString();
+        this.link = in.readString();
+        this.date = in.readString();
+        this.guid = in.readString();
+        this.excerpt = in.readString();
+    }
 
     public int getArticleId() {
         return articleId;
@@ -62,28 +85,4 @@ public class Article implements Parcelable {
         dest.writeString(this.guid);
         dest.writeString(this.excerpt);
     }
-
-    public Article() {
-    }
-
-    protected Article(Parcel in) {
-        this.articleId = in.readInt();
-        this.title = in.readString();
-        this.author = in.readParcelable(Author.class.getClassLoader());
-        this.content = in.readString();
-        this.link = in.readString();
-        this.date = in.readString();
-        this.guid = in.readString();
-        this.excerpt = in.readString();
-    }
-
-    public static final Parcelable.Creator<Article> CREATOR = new Parcelable.Creator<Article>() {
-        public Article createFromParcel(Parcel source) {
-            return new Article(source);
-        }
-
-        public Article[] newArray(int size) {
-            return new Article[size];
-        }
-    };
 }
