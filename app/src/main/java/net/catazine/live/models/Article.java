@@ -3,7 +3,6 @@ package net.catazine.live.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,7 +25,7 @@ public class Article implements Parcelable {
     private static final String KEY_DATE = "date";
     private static final String KEY_GUID = "guid";
     private static final String KEY_FEATURED_IMAGE = "featured_image";
-    private long articleId;
+    private long id;
     private String title;
     private String author;
     private String content;
@@ -35,9 +34,20 @@ public class Article implements Parcelable {
     private String guid;
     private String featured_image;
 
+    public Article(long articleId, String title, String author,
+                   String link, String date, String guid, String featured_image) {
+        this.id = articleId;
+        this.title = title;
+        this.author = author;
+        this.link = link;
+        this.date = date;
+        this.guid = guid;
+        this.featured_image = featured_image;
+    }
+
     public Article(long articleId, String title, String author, String content,
                    String link, String date, String guid, String featured_image) {
-        this.articleId = articleId;
+        this.id = articleId;
         this.title = title;
         this.author = author;
         this.content = content;
@@ -48,10 +58,9 @@ public class Article implements Parcelable {
     }
 
     protected Article(Parcel in) {
-        setArticleId(in.readInt());
+        setId(in.readInt());
         setTitle(in.readString());
         setAuthor(in.readString());
-        setContent(in.readString());
         setLink(in.readString());
         setDate(in.readString());
         setGuid(in.readString());
@@ -94,7 +103,21 @@ public class Article implements Parcelable {
         return KEY_FEATURED_IMAGE;
     }
 
-    public static Article deserialize(JSONObject articleJsonObject) throws JSONException {
+    public static Article getAllArticleData(JSONObject articleJsonObject) throws JSONException {
+        Long id = articleJsonObject.getLong(getKeyId());
+        String title = articleJsonObject.getString(getKeyTitle());
+        JSONObject author = articleJsonObject.getJSONObject(getKeyAuthor());
+        String authorName = author.getString(getKeyAuthorName());
+        String link = articleJsonObject.getString(getKeyLink());
+        String date = articleJsonObject.getString(getKeyDate());
+        String guid = articleJsonObject.getString(getKeyGuid());
+        JSONObject featuredImageObject = articleJsonObject.getJSONObject(getKeyFeaturedImage());
+        String featured_image = featuredImageObject.getString(getKeyGuid());
+
+        return new Article(id, title, authorName, link, date, guid, featured_image);
+    }
+
+    public static Article getMainArticleData(JSONObject articleJsonObject) throws JSONException {
         Long id = articleJsonObject.getLong(getKeyId());
         String title = articleJsonObject.getString(getKeyTitle());
         JSONObject author = articleJsonObject.getJSONObject(getKeyAuthor());
@@ -117,12 +140,12 @@ public class Article implements Parcelable {
         this.featured_image = featured_image;
     }
 
-    public long getArticleId() {
-        return articleId;
+    public long getId() {
+        return id;
     }
 
-    public void setArticleId(long articleId) {
-        this.articleId = articleId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -180,10 +203,9 @@ public class Article implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(getArticleId());
+        dest.writeLong(getId());
         dest.writeString(getTitle());
         dest.writeString(getAuthor());
-        dest.writeString(getContent());
         dest.writeString(getLink());
         dest.writeString(getDate());
         dest.writeString(getGuid());
