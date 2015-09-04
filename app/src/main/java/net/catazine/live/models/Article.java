@@ -20,12 +20,12 @@ public class Article implements Parcelable {
     private static final String KEY_ID = "ID";
     private static final String KEY_TITLE = "title";
     private static final String KEY_AUTHOR = "author";
-    private static final int KEY_AUTHOR_NAME = 2;
+    private static final String KEY_AUTHOR_NAME = "name";
     private static final String KEY_CONTENT = "content";
     private static final String KEY_LINK = "link";
     private static final String KEY_DATE = "date";
     private static final String KEY_GUID = "guid";
-    private static final String KEY_FEATURED_IMAGE = "source";
+    private static final String KEY_FEATURED_IMAGE = "featured_image";
     private long articleId;
     private String title;
     private String author;
@@ -70,7 +70,7 @@ public class Article implements Parcelable {
         return KEY_AUTHOR;
     }
 
-    public static int getKeyAuthorName() {
+    public static String getKeyAuthorName() {
         return KEY_AUTHOR_NAME;
     }
 
@@ -97,15 +97,16 @@ public class Article implements Parcelable {
     public static Article deserialize(JSONObject articleJsonObject) throws JSONException {
         Long id = articleJsonObject.getLong(getKeyId());
         String title = articleJsonObject.getString(getKeyTitle());
-//        JSONArray author = articleJsonObject.getJSONArray(getKeyAuthor());
-//        String authorName = author.getString(getKeyAuthorName());
+        JSONObject author = articleJsonObject.getJSONObject(getKeyAuthor());
+        String authorName = author.getString(getKeyAuthorName());
         String content = articleJsonObject.getString(getKeyContent());
         String link = articleJsonObject.getString(getKeyLink());
         String date = articleJsonObject.getString(getKeyDate());
         String guid = articleJsonObject.getString(getKeyGuid());
-      //  String featured_image = articleJsonObject.getString(getKeyFeaturedImage());
+        JSONObject featuredImageObject = articleJsonObject.getJSONObject(getKeyFeaturedImage());
+        String featured_image = featuredImageObject.getString(getKeyGuid());
 
-        return new Article(id, title, "authorName", content, link, date, guid, "featured_image");
+        return new Article(id, title, authorName, content, link, date, guid, featured_image);
     }
 
     public String getFeatured_image() {
