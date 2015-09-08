@@ -46,7 +46,6 @@ public class NetworkHelper {
 
             @Override
             public void onResponse(Response response) throws IOException {
-                //Log.e("NetworkHelper", response.body().string());
 
                 try {
                     //use This in Future Adapter
@@ -59,6 +58,36 @@ public class NetworkHelper {
         });
     }
 
+    public static void requestArticleById(Long articleId) {
+        Uri requestArticlesUri  = Uri.parse(ARTICLESHEADERURL).buildUpon()
+                .appendPath(articleId.toString()).build();
+        URL requestArticlesUrl = null;
+        try {
+            requestArticlesUrl= new URL(requestArticlesUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        Request request = new Request.Builder()
+                .url(requestArticlesUrl).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+
+                try {
+                    //use This in Future Adapter
+                    Article article = JSONHelper.getArticle(response.body().string());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
 
 }
