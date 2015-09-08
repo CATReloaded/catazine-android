@@ -19,35 +19,48 @@ public class Author implements Parcelable {
         }
     };
 
-    private static final String KEY_ID = "id";
-    private static final String KEY_NAME = "name";
     private static final String KEY_AVATARS_OBJ = "avatar_urls";
     private static final String KEY_AVATARS_SMALL_SIZE = "24";
     private static final String KEY_AVATARS_MEDIUM_SIZE = "48";
     private static final String KEY_AVATARS_LARGE_SIZE = "96";
     private static final String KEY_DESCRIPTION = "description";
+    private static final String KEY_ID = "id";
     private static final String KEY_LINK = "link";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_POSTS_COUNT = "posts_count";
 
-    private long authorId;
+    private long id;
     private String name;
     private String avatar;
     private String description;
     private String link;
+    private int posts_count;
 
-    public Author(long authorId, String name, String avatar, String description, String link) {
-        setAuthorId(authorId);
+    public Author(long id, String name, String avatar, String description, String link, int posts_count) {
+        setId(id);
         setName(name);
         setAvatar(avatar);
         setDescription(description);
         setLink(link);
+        setPosts_count(posts_count);
+    }
+
+    public Author(long authorId, String name) {
+        setId(authorId);
+        setName(name);
     }
 
     protected Author(Parcel in) {
-        setAuthorId(in.readInt());
+        setId(in.readInt());
         setName(in.readString());
         setAvatar(in.readString());
         setDescription(in.readString());
         setLink(in.readString());
+        setPosts_count(in.readInt());
+    }
+
+    public static String getKeyPostsCount() {
+        return KEY_POSTS_COUNT;
     }
 
     public static String getKeyId() {
@@ -89,8 +102,17 @@ public class Author implements Parcelable {
         String avatar = avatarObj.getString(getKeyAvatarsLargeSize());
         String description = authorObj.getString(getKeyDescription());
         String link = authorObj.getString(getKeyLink());
+        int posts = authorObj.getInt(getKeyPostsCount());
 
-        return new Author(id, name, avatar, description, link);
+        return new Author(id, name, avatar, description, link, posts);
+    }
+
+    public int getPosts_count() {
+        return posts_count;
+    }
+
+    public void setPosts_count(int posts_count) {
+        this.posts_count = posts_count;
     }
 
     public String getLink() {
@@ -101,12 +123,12 @@ public class Author implements Parcelable {
         this.link = link;
     }
 
-    public long getAuthorId() {
-        return authorId;
+    public long getId() {
+        return id;
     }
 
-    public void setAuthorId(long authorId) {
-        this.authorId = authorId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -140,10 +162,11 @@ public class Author implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(getAuthorId());
+        dest.writeLong(getId());
         dest.writeString(getName());
         dest.writeString(getAvatar());
         dest.writeString(getDescription());
         dest.writeString(getLink());
+        dest.writeInt(getPosts_count());
     }
 }
