@@ -54,8 +54,8 @@ public class JSONHelper {
     /**
      * Method that gets all the authors of CATaZie.
      *
-     * @param authorsResponse
-     * @return
+     * @param authorsResponse a string that returns from `requestAuthors` method in `NetworkHelper` class.
+     * @return a collection of authors containing.
      * @throws JSONException
      * @since 1.0
      */
