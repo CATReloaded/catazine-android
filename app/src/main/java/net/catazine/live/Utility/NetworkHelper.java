@@ -2,6 +2,7 @@ package net.catazine.live.Utility;
 
 
 import android.net.Uri;
+import android.util.Log;
 
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -179,5 +180,36 @@ public class NetworkHelper {
                 }
             }
         });
+    }
+
+    /**
+     * getting all articles written by specific author
+     *
+     * @param authorID
+     * @throws IOException
+     */
+    public static void requestArticlesByAuthor(final long authorID) {
+        String authorPosts = "http://catazinelive.net/wp-json/wp/v2/posts?filter[author]=" + authorID;
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().url(authorPosts).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    Log.d("response", "response succeeded");
+                    try {
+                        JSONHelper.getArticles(response.body().string());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+
     }
 }
