@@ -9,6 +9,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import net.catazine.live.models.Article;
+import net.catazine.live.models.Author;
 
 import org.json.JSONException;
 
@@ -26,6 +27,9 @@ import java.util.Collection;
 public class NetworkHelper {
     private final static OkHttpClient client = new OkHttpClient();
     private final static String ARTICLES_HEADER_URL = "http://catazinelive.net/wp-json/wp/v2/posts";
+    private final static String PAGE_PARAMETER = "page";
+    private final static String AUTHORS_URL = "http://catazinelive.net/wp-json/wp/v2/users";
+
 
     /**
      * Method that request the main articles info from the API.
@@ -34,10 +38,9 @@ public class NetworkHelper {
      * @since 1.0
      */
     public static void requestArticlesHeaders(int page) {
-        final String PAGE_PARAMETER = "page";
 
         Uri requestArticlesUri = Uri.parse(ARTICLES_HEADER_URL).buildUpon()
-                .appendQueryParameter(PAGE_PARAMETER, page + "").build();
+                .appendQueryParameter(PAGE_PARAMETER, String.valueOf(page)).build();
         URL requestArticlesUrl = null;
         try {
             requestArticlesUrl = new URL(requestArticlesUri.toString());
@@ -141,5 +144,40 @@ public class NetworkHelper {
         });
     }
 
+    /**
+     * Method that request authors from the API.
+     *
+     * @param page Used To define the needed page from the server (Might be used in OnScrollListener)
+     * @since 1.0
+     */
+    public static void requestAuthors(int page) {
 
+        Uri requestAuthorsUri = Uri.parse(AUTHORS_URL).buildUpon()
+                .appendQueryParameter(PAGE_PARAMETER, String.valueOf(page)).build();
+        URL requestAuthorsUrl = null;
+        try {
+            requestAuthorsUrl = new URL(requestAuthorsUri.toString());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        Request request = new Request.Builder()
+                .url(requestAuthorsUrl).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+
+                try {
+                    //use This in Future Adapter
+                    Collection<Author> authorsList = JSONHelper.getAuthors(response.body().string());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 }
