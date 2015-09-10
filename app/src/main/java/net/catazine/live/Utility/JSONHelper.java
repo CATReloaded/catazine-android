@@ -19,10 +19,11 @@ public class JSONHelper {
 
     /**
      * Method that gets all the articles.
-     * @since 1.0
+     *
      * @param postsResponse a string that returns from `requestArticlesHeaders` method in `NetworkHelper` class.
      * @return a collection of articles containing all fields except the `post_content` of every article.
      * @throws JSONException
+     * @since 1.0
      */
     public static Collection<Article> getArticles(String postsResponse) throws JSONException {
         Collection<Article> articles = new ArrayList<>();
@@ -38,10 +39,11 @@ public class JSONHelper {
 
     /**
      * Method that gets a single article.
-     * @since 1.0
+     *
      * @param postsResponse a string that returns from `requestArticleById` method in `NetworkHelper` class.
      * @return an article object congaing all article fields including `post_content`.
      * @throws JSONException
+     * @since 1.0
      */
     public static Article getArticle(String postsResponse) throws JSONException {
         JSONObject articleObj = new JSONObject(postsResponse);
@@ -51,10 +53,11 @@ public class JSONHelper {
 
     /**
      * Method that gets all the authors of CATaZie.
-     * @since 1.0
+     *
      * @param authorsResponse
      * @return
      * @throws JSONException
+     * @since 1.0
      */
     public static Collection<Author> getAuthors(String authorsResponse) throws JSONException {
         Collection<Author> authors = new ArrayList<>();

@@ -19,6 +19,7 @@ import java.util.Collection;
 
 /**
  * Helper Class containing network requests methods.
+ *
  * @since 1.0
  */
 
@@ -28,8 +29,9 @@ public class NetworkHelper {
 
     /**
      * Method that request the main articles info from the API.
-     * @since 1.0
+     *
      * @param page Used To define the needed page from the server (Might be used in OnScrollListener)
+     * @since 1.0
      */
     public static void requestArticlesHeaders(int page) {
         final String PAGE_PARAMETER = "page";
@@ -103,8 +105,9 @@ public class NetworkHelper {
 
     /**
      * Method that request a searches for a string in the articles.
-     * @since 1.0
+     *
      * @param searchWords The string to pass in the search query.
+     * @since 1.0
      */
     public static void searchArticlesByText(String searchWords) {
         final String SEARCH_PARAMETER = "filter[s]";
