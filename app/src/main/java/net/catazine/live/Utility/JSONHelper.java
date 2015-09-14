@@ -1,7 +1,5 @@
 package net.catazine.live.Utility;
 
-import android.util.Log;
-
 import net.catazine.live.models.Article;
 import net.catazine.live.models.Author;
 
@@ -12,8 +10,21 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class JSONHelper  {
+/**
+ * Helper Class containing JSON handling methods.
+ *
+ * @since 1.0
+ */
+public class JSONHelper {
 
+    /**
+     * Method that gets all the articles.
+     *
+     * @param postsResponse a string that returns from `requestArticlesHeaders` method in `NetworkHelper` class.
+     * @return a collection of articles containing all fields except the `post_content` of every article.
+     * @throws JSONException
+     * @since 1.0
+     */
     public static Collection<Article> getArticles(String postsResponse) throws JSONException {
         Collection<Article> articles = new ArrayList<>();
         JSONArray articlesArray = new JSONArray(postsResponse);
@@ -21,28 +32,33 @@ public class JSONHelper  {
             JSONObject articleObj = articlesArray.getJSONObject(i);
             Article article = Article.getMainArticleData(articleObj);
             articles.add(article);
-            Log.i("title", article.getTitle());
-            Log.i("link", article.getLink());
-            Log.i("id", article.getId()+"");
-            Log.i("img", article.getFeatured_image());
-            Log.i("guid", article.getGuid());
         }
         return articles;
     }
 
 
+    /**
+     * Method that gets a single article.
+     *
+     * @param postsResponse a string that returns from `requestArticleById` method in `NetworkHelper` class.
+     * @return an article object congaing all article fields including `post_content`.
+     * @throws JSONException
+     * @since 1.0
+     */
     public static Article getArticle(String postsResponse) throws JSONException {
         JSONObject articleObj = new JSONObject(postsResponse);
         Article article = Article.getAllArticleData(articleObj);
-        Log.i("title", article.getTitle());
-        Log.i("link", article.getLink());
-        Log.i("id", article.getId()+"");
-        Log.i("img", article.getFeatured_image());
-        Log.i("guid", article.getGuid());
-        Log.i("content", article.getContent());
         return article;
     }
 
+    /**
+     * Method that gets all the authors of CATaZie.
+     *
+     * @param authorsResponse a string that returns from `requestAuthors` method in `NetworkHelper` class.
+     * @return a collection of authors containing.
+     * @throws JSONException
+     * @since 1.0
+     */
     public static Collection<Author> getAuthors(String authorsResponse) throws JSONException {
         Collection<Author> authors = new ArrayList<>();
         JSONArray authorsArray = new JSONArray(authorsResponse);
@@ -50,12 +66,6 @@ public class JSONHelper  {
             JSONObject authorObj = authorsArray.getJSONObject(i);
             Author author = Author.getAuthorData(authorObj);
             authors.add(author);
-            Log.i("NAME", author.getName());
-            Log.i("ID", author.getId()+"");
-            Log.i("DESC", author.getDescription());
-            Log.i("AVATAR", author.getAvatar());
-            Log.i("LINK", author.getLink());
-            Log.i("COUNT", author.getPosts_count()+"");
         }
         return authors;
     }
