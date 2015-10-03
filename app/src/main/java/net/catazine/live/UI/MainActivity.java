@@ -1,4 +1,4 @@
-package net.catazine.live;
+package net.catazine.live.UI;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
+import net.catazine.live.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {

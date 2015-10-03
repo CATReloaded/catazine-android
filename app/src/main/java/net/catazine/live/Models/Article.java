@@ -1,4 +1,4 @@
-package net.catazine.live.models;
+package net.catazine.live.Models;
 
 import android.os.Parcel;
 import android.os.Parcelable;

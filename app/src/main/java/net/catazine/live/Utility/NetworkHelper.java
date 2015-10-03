@@ -10,8 +10,8 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
-import net.catazine.live.models.Article;
-import net.catazine.live.models.Author;
+import net.catazine.live.Models.Article;
+import net.catazine.live.Models.Author;
 
 import org.json.JSONException;
 
