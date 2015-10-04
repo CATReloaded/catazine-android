@@ -14,7 +14,7 @@
 
     <string name="action_example">Example action</string>
     <string name="title_activity_article">ArticleActivity</string>
-    <string name="title_activity_authors">AuthorsActivity</string>
+    <string name="title_activity_authors">الكُتاب</string>
 
 
 </resources>
