@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,16 +14,18 @@ import net.catazine.live.Models.Author;
 import net.catazine.live.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AuthorsAdapter extends RecyclerView.Adapter<AuthorsAdapter.AuthorsViewHolder> {
     OnItemClickListener mItemClickListener;
-    private ArrayList<Author> authors;
+    private Collection<Author> authors;
     private Context context;
 
-    public AuthorsAdapter(Context context, ArrayList<Author> authors) {
+    public AuthorsAdapter(Context context, Collection<Author> authors) {
         this.context = context;
         this.authors = authors;
     }
@@ -78,7 +79,7 @@ public class AuthorsAdapter extends RecyclerView.Adapter<AuthorsAdapter.AuthorsV
         @Bind(R.id.author_name)
         TextView authorName;
         @Bind(R.id.author_image)
-        ImageView authorAvatar;
+        CircleImageView authorAvatar;
 
         public AuthorsViewHolder(View view) {
             super(view);
