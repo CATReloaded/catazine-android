@@ -1,7 +1,7 @@
 package net.catazine.live.Utility;
 
-import net.catazine.live.models.Article;
-import net.catazine.live.models.Author;
+import net.catazine.live.Models.Article;
+import net.catazine.live.Models.Author;
 
 import org.json.JSONArray;
 import org.json.JSONException;

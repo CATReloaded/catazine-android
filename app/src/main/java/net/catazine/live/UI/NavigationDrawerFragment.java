@@ -1,4 +1,4 @@
-package net.catazine.live;
+package net.catazine.live.UI;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
@@ -21,6 +21,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import net.catazine.live.R;
 
 
 public class NavigationDrawerFragment extends Fragment {
