@@ -18,32 +18,10 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: net.catazine.live" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b0a7286-1fd7-43c4-b057-17a8fc295d8b" name="Default" comment="Add Authors Adapter.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivityFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/Utility/EndlessRecyclerOnScrollListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_authors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/ahmad.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_authors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fav_icon_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_authors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_authors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/touch_selector.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/okio_1_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_1.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/Adapters/AuthorsAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/Adapters/AuthorsAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+    <list default="true" id="0b0a7286-1fd7-43c4-b057-17a8fc295d8b" name="Default" comment="`JF Flat Regular` is now the default font.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_authors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_authors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="catazine-android.iws" />
@@ -95,12 +73,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.87586206">
+              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -125,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83076924">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.2">
+              <caret line="31" column="36" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1332,7 +1312,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4327646590428" />
+        <entry key="$PROJECT_DIR$" value="4327647369473" />
         <entry key="E:\Amr\catazine-android" value="4323156725185" />
       </map>
     </option>
@@ -1687,9 +1667,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/touch_selector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/fav_icon_selector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_authors.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
   </component>
@@ -2114,7 +2094,13 @@
       <option name="project" value="LOCAL" />
       <updated>1443870533792</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Authors Activity is working.">
+      <created>1443919600852</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1443919600852</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2176,7 +2162,8 @@
     <MESSAGE value="`NetworkHelper` methods now return response to UI thread." />
     <MESSAGE value="Rearrange code + Add `Butter Knife`" />
     <MESSAGE value="Add Authors Adapter." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Authors Adapter." />
+    <MESSAGE value="Authors Activity is working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Authors Activity is working." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -2540,8 +2527,8 @@
           <caret line="77" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="method#AuthorsActivityFragment#0;class#AuthorsActivityFragment#0" expanded="false" />
-            <element signature="method#onFailure#0;class#2048:2908" expanded="false" />
-            <element signature="method#onResponse#1;class#2048:2908" expanded="false" />
+            <element signature="method#onFailure#0;class#1999:2859" expanded="false" />
+            <element signature="method#onResponse#1;class#1999:2859" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2566,27 +2553,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.2">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/AuthorsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/net/catazine/live/UI/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83076924">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.87586206">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

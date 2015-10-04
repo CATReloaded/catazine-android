@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:design:22.2.1'
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.rockerhieu:rv-adapter-endless:1.1'
+    compile 'uk.co.chrisjenx:calligraphy:2.1.0'
 }
